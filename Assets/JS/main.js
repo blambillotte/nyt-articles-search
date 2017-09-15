@@ -41,18 +41,21 @@ function callAPI() {
   });
 };
 
-function writeToDOM(param1, param2, param3) {
-  console.log(param2);
+function writeToDOM(title, subTitle, url) {
+  //Add Title "Snippet"
+  console.log(subTitle);
   var title = $('<h2>');
-  title.html(param1);
+  title.html(title);
 
+  //Add subtitle "Byline"
   var subtitle = $('<span>');
   subtitle.addClass('subtitle');
-  subtitle.html(param2);
+  subtitle.html(subTitle);
 
+  //Apend Items
   resultDiv.append(title, subtitle);
 
-  console.log(param3);
+  console.log(url);
 
 }
 
@@ -67,6 +70,7 @@ function search() {
   searchString = searchTermInput.val();
   recordNumber = numRecordsInput.val();
   callAPI();
+  clearResults();
 };
 
 
